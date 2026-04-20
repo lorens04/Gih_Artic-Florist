@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gih_Artic Florist | Papan Bunga Premium Duri, Riau</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; background-color: #0a0a0a; color: #e5e7eb; }
+        h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; }
+        .gold-text { color: #d4af37; }
+        .bg-gold { background-color: #d4af37; }
+        .border-gold { border-color: #d4af37; }
+        .dark-card { background: #151515; border: 1px solid #262626; }
+        .glass-nav { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(15px); }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(10,10,10,0.4), #0a0a0a); }
+        .btn-premium { 
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); 
+            transition: all 0.3s ease;
+        }
+        .btn-premium:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4); }
+        .img-hover { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .img-hover:hover { transform: scale(1.05); }
+        
+        /* Floating animation for About Image */
+        @keyframes floating {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-float { animation: floating 4s ease-in-out infinite; }
+        
+        /* Lightbox transitions */
+        #lightbox { transition: opacity 0.3s ease; }
+        #lightbox.hidden { opacity: 0; pointer-events: none; display: none; }
+        #lightbox.flex { opacity: 1; pointer-events: auto; }
+    </style>
+    <link rel="icon" type="image/x-icon" href="Gambar/Icon Title.png">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-white/5">
+        <div class="max-w-77xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 border-2 border-gold rounded-full flex items-center justify-center bg-white overflow-hidden p-1">
+                    <img src="Gambar/Icon Title.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" alt="Icon">
+                    <i data-lucide="flower" class="text-gold w-6 h-6 hidden"></i>
+                </div>
+                <span class="text-2xl font-bold tracking-widest uppercase text-white serif">Gih_Artic</span>
+            </div>
+            <div class="hidden md:flex space-x-10 text-sm font-medium tracking-widest uppercase">
+                <a href="#home" class="hover:text-gold transition text-gray-400">Beranda</a>
+                <a href="#about" class="hover:text-gold transition text-gray-400">Profil</a>
+                <a href="#products" class="hover:text-gold transition text-gray-400">Katalog</a>
+                <a href="#portfolio" class="hover:text-gold transition text-gray-400">Galeri</a>
+                <a href="#contact" class="hover:text-gold transition text-gray-400">Kontak</a>
+            </div>
+            <a href="#contact" class="btn-premium text-black px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase">
+                Pesan Sekarang
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=1920" class="w-full h-full object-cover opacity-30" alt="Background">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+            <div class="max-w-3xl">
+                <p class="text-gold tracking-[0.3em] uppercase text-sm font-semibold mb-6">Est. 2022 | Duri, Riau, Indonesia</p>
+                <h1 class="text-6xl md:text-8xl font-bold text-white mb-8 leading-tight">
+                    Sampaikan <span class="italic font-normal">Perasaan</span> Lewat Karya Seni
+                </h1>
+                <p class="text-xl text-gray-400 mb-12 leading-relaxed max-w-2xl">
+                    Papan bunga artisanal premium di Duri untuk setiap momen berharga. Kami mengubah sentimen Anda menjadi mahakarya floral yang megah dan eksklusif.
+                </p>
+                <div class="flex flex-wrap gap-6">
+                    <a href="#products" class="btn-premium text-black px-10 py-5 rounded-xl font-bold uppercase tracking-widest text-sm">
+                        Jelajahi Koleksi
+                    </a>
+                    <a href="https://wa.me/6281378220842" target="_blank" class="border border-white/20 hover:border-gold transition px-10 py-5 rounded-xl font-bold uppercase tracking-widest text-sm flex items-center gap-3">
+                        WhatsApp Admin <i data-lucide="chevron-right" class="w-4 h-4 text-gold"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="flex justify-center md:justify-start">
+                    <div class="relative max-w-xs md:max-w-sm w-full group">
+                        <!-- Decorative Frame -->
+                        <div class="absolute -inset-4 border border-gold/30 rounded-2xl translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+                        <div class="absolute -inset-4 border border-gold/10 rounded-2xl -translate-x-4 -translate-y-4 group-hover:-translate-x-2 group-hover:-translate-y-2 transition-transform duration-500"></div>
+                        
+                        <!-- Floating Image Container -->
+                        <div class="animate-float relative z-10">
+                            <img src="Gambar/Logo.png" onerror="this.src='https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=600'" 
+                                 class="rounded-2xl shadow-2xl transition duration-700 bg-white p-8 group-hover:rotate-1 group-hover:scale-105" 
+                                 alt="Logo Profile">
+                            
+                            <!-- Interactive Badge -->
+                            <div class="absolute -bottom-6 -right-6 bg-gold text-black p-4 rounded-xl shadow-xl transform group-hover:rotate-3 transition-transform">
+                                <p class="text-[10px] font-bold uppercase tracking-tighter">Established</p>
+                                <p class="text-xl font-bold serif">2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-gold tracking-[0.4em] uppercase text-xs font-bold mb-4 block">Tentang Kami</span>
+                    <h2 class="text-5xl font-bold mb-8 serif text-white">Dedikasi Gih_Artic Florist</h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Gih_Artic Expressions lahir dari kecintaan mendalam terhadap seni floral di Duri, Riau. Sejak 2022, kami telah dipercaya untuk mewakili suara pelanggan dalam setiap momen suka maupun duka dengan kualitas terbaik dan pelayanan yang tulus.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-10">
+                        <div class="dark-card p-6 rounded-xl hover:border-gold/30 transition-colors">
+                            <h3 class="text-gold font-bold uppercase tracking-widest text-xs mb-3">Visi Kami</h3>
+                            <p class="text-xs text-gray-500">Menjadi standar kemewahan baru dalam industri papan bunga di wilayah Riau.</p>
+                        </div>
+                        <div class="dark-card p-6 rounded-xl hover:border-gold/30 transition-colors">
+                            <h3 class="text-gold font-bold uppercase tracking-widest text-xs mb-3">Misi Kami</h3>
+                            <p class="text-xs text-gray-500">Memberikan pelayanan personal dan kualitas material premium tanpa kompromi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Produk -->
+    <section id="products" class="py-32 bg-[#0f0f0f]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-gold tracking-[0.4em] uppercase text-xs font-bold">Koleksi Terpilih</span>
+                <h2 class="text-5xl font-bold mt-4 serif text-white">Daftar Paket Premium</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Paket Single -->
+                <div class="dark-card group overflow-hidden rounded-3xl transition-all duration-500 hover:border-gold/50">
+                    <div class="h-80 overflow-hidden relative">
+                        <img src="Gambar/Paket 1.jpeg" onerror="this.src='https://images.unsplash.com/photo-1544833095-184566edc0e1?auto=format&fit=crop&q=80&w=600'" class="w-full h-full object-cover img-hover" alt="Single">
+                    </div>
+                    <div class="p-8 text-center">
+                        <h3 class="text-2xl font-bold serif text-white mb-2">Paket Single</h3>
+                        <p class="text-gold font-bold text-xl mb-4">Rp 250.000</p>
+                        <p class="text-gray-500 text-sm mb-8">Papan ukuran standar dengan rangkaian bunga menarik dan rapi.</p>
+                        <button onclick="openOrderModal('Single (250rb)')" class="w-full border border-gold/20 text-gold py-4 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-gold hover:text-black transition">Pilih Paket</button>
+                    </div>
+                </div>
+
+                <!-- Paket Double -->
+                <div class="dark-card group overflow-hidden rounded-3xl transition-all duration-500 hover:border-gold/50">
+                    <div class="h-80 overflow-hidden relative">
+                        <img src="Gambar/Paket 2.jpeg" onerror="this.src='https://images.unsplash.com/photo-1519225495810-758b63300051?auto=format&fit=crop&q=80&w=600'" class="w-full h-full object-cover img-hover" alt="Double">
+                    </div>
+                    <div class="p-8 text-center">
+                        <h3 class="text-2xl font-bold serif text-white mb-2">Paket Double</h3>
+                        <p class="text-gold font-bold text-xl mb-4">Rp 450.000</p>
+                        <p class="text-gray-500 text-sm mb-8">Dua papan yang digabung, memberikan kesan lebih luas dan megah.</p>
+                        <button onclick="openOrderModal('Double (450rb)')" class="w-full border border-gold/20 text-gold py-4 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-gold hover:text-black transition">Pilih Paket</button>
+                    </div>
+                </div>
+
+                <!-- Paket Jumbo -->
+                <div class="dark-card group overflow-hidden rounded-3xl transition-all duration-500 hover:border-gold/50">
+                    <div class="h-80 overflow-hidden relative">
+                        <img src="Gambar/Paket 3.jpeg" onerror="this.src='https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=600'" class="w-full h-full object-cover img-hover" alt="Jumbo">
+                    </div>
+                    <div class="p-8 text-center">
+                        <h3 class="text-2xl font-bold serif text-white mb-2">Paket Jumbo</h3>
+                        <p class="text-gold font-bold text-xl mb-4">Rp 500.000</p>
+                        <p class="text-gray-500 text-sm mb-8">Papan ukuran raksasa dengan desain paling prestisius dan mewah.</p>
+                        <button onclick="openOrderModal('Jumbo (500rb)')" class="w-full border border-gold/20 text-gold py-4 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-gold hover:text-black transition">Pilih Paket</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri & Portfolio -->
+    <section id="portfolio" class="py-32 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-bold serif text-white">Galeri Hasil Karya</h2>
+                <p class="text-gray-500 mt-4">Koleksi foto asli papan bunga premium dari studio Gih_Artic.</br>Klik gambar untuk memperbesar</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="overflow-hidden rounded-2xl cursor-pointer" onclick="openLightbox('Gambar/Produk 1.jpeg')">
+                    <img src="Gambar/Produk 1.jpeg" onerror="this.src='https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=400'" class="w-full h-64 object-cover grayscale hover:grayscale-0 transition duration-500 hover:scale-110" alt="Galeri">
+                </div>
+                <div class="overflow-hidden rounded-2xl cursor-pointer" onclick="openLightbox('Gambar/Produk 2.jpeg')">
+                    <img src="Gambar/Produk 2.jpeg" onerror="this.src='https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80&w=400'" class="w-full h-64 object-cover grayscale hover:grayscale-0 transition duration-500 hover:scale-110" alt="Galeri">
+                </div>
+                <div class="overflow-hidden rounded-2xl cursor-pointer" onclick="openLightbox('Gambar/Produk 3.jpeg')">
+                    <img src="Gambar/Produk 3.jpeg" onerror="this.src='https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=400'" class="w-full h-64 object-cover grayscale hover:grayscale-0 transition duration-500 hover:scale-110" alt="Galeri">
+                </div>
+                <div class="overflow-hidden rounded-2xl cursor-pointer" onclick="openLightbox('Gambar/Produk 4.jpeg')">
+                    <img src="Gambar/Produk 4.jpeg" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&q=80&w=400'" class="w-full h-64 object-cover grayscale hover:grayscale-0 transition duration-500 hover:scale-110" alt="Galeri">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 items-center justify-center hidden p-4 md:p-10" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white hover:text-gold transition">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="lightboxImg" src="" class="max-w-full max-h-full rounded-lg shadow-2xl object-contain" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Kontak & Reservasi -->
+    <section id="contact" class="py-32 bg-[#0f0f0f]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="dark-card rounded-[3rem] overflow-hidden grid lg:grid-cols-2 shadow-2xl border border-white/5">
+                <div class="p-16 border-r border-white/5">
+                    <h2 class="text-4xl font-bold mb-8 serif text-white">Formulir Pesanan</h2>
+                    <form id="orderForm" class="space-y-6">
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest text-gold font-bold">Pilih Paket</label>
+                            <select id="packageSelect" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl focus:border-gold outline-none transition text-white appearance-none">
+                                <option value="Single (250rb)" class="bg-black">Paket Single - Rp 250.000</option>
+                                <option value="Double (450rb)" class="bg-black">Paket Double - Rp 450.000</option>
+                                <option value="Jumbo (500rb)" class="bg-black">Paket Jumbo - Rp 500.000</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest text-gold font-bold">Detail Ucapan</label>
+                            <textarea id="orderMessage" placeholder="Tuliskan ucapan dan nama pengirim..." rows="4" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl focus:border-gold outline-none transition text-white" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full btn-premium text-black p-5 rounded-xl font-bold uppercase tracking-widest text-sm">
+                            Kirim via WhatsApp
+                        </button>
+                    </form>
+                </div>
+                <div class="p-16 bg-[#0a0a0a]">
+                    <h2 class="text-4xl font-bold mb-10 serif text-white">Hubungi Kami</h2>
+                    <div class="space-y-8">
+                        <!-- Alamat -->
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center text-gold flex-shrink-0">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <p class="text-gray-400">Jl. Karang Anyer II, Air Jamban, Kec. Mandau,<br>Duri, Riau, Indonesia (28784)</p>
+                        </div>
+                        <!-- WhatsApp -->
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center text-gold flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+                            </div>
+                            <p class="text-gray-400">WhatsApp Admin:<br><span class="text-white font-bold tracking-widest">+62 813-7822-0842</span></p>
+                        </div>
+                        <!-- Instagram -->
+                        <div class="flex gap-6 items-center">
+                            <a href="https://www.instagram.com/Gih_ArticFlorist" target="_blank" class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center text-gold flex-shrink-0 hover:bg-gold hover:text-black transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                            </a>
+                            <p class="text-gray-400">Follow Instagram:<br><a href="https://www.instagram.com/Gih_ArticFlorist" target="_blank" class="text-white font-bold tracking-widest hover:text-gold transition">@Gih_ArticFlorist</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Duri, Riau -->
+            <div class="mt-12 rounded-[2rem] overflow-hidden h-80 grayscale opacity-60 border border-white/5">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d382.259526738486!2d101.20025251219855!3d1.2894776239149612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d37b88a86d1a55%3A0xb386e49e0e69e99c!2sGih_Artic%20Florist!5e0!3m2!1sid!2sid!4v1776680563468!5m2!1sid!2sid"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-white/5 text-center">
+        <div class="flex items-center justify-center gap-3 mb-8">
+            <span class="text-xl font-bold tracking-[0.4em] uppercase serif text-white">Gih_Artic Florist</span>
+        </div>
+        <p class="text-[10px] text-gray-600 tracking-widest uppercase">© 2022 Gih_Artic Florist Duri Riau. Crafted for your special moments.</p>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="fixed bottom-10 right-10 z-[60]">
+        <a href="https://wa.me/6281378220842" target="_blank" class="w-20 h-20 bg-gold rounded-full shadow-2xl flex items-center justify-center text-black hover:scale-110 transition group">
+            <i data-lucide="message-circle" class="w-8 h-8"></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Lightbox Logic
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightboxImg');
+            img.src = src;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Stop scrolling
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Handle Escape key to close lightbox
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Pesan via WhatsApp
+        document.getElementById('orderForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const paket = document.getElementById('packageSelect').value;
+            const pesan = document.getElementById('orderMessage').value;
+            const phone = "6281378220842";
+            const text = encodeURIComponent(`Halo Gih_Artic Florist,\n\nSaya ingin memesan paket: *${paket}*\n\nUcapan:\n${pesan}`);
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        });
+
+        // Pilih paket dari katalog
+        function openOrderModal(paket) {
+            document.getElementById('packageSelect').value = paket;
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('orderMessage').focus();
+        }
+    </script>
+</body>
+</html>
